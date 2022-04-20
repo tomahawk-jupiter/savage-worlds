@@ -1,0 +1,58 @@
+.customRollPanel {
+  border: solid 1px;
+  padding: 0.5rem;
+  margin-right: 0.25rem;
+  width: 450px;
+}
+
+.customDiceWrapper {
+  display: inline-flex;
+}
+.customResultWrapper {
+  display: inline-flex;
+}
+
+.customDice {
+  background-color: black;
+  color: white;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+
+.customResult {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.3rem;
+  margin-bottom: 0.2rem;
+  box-shadow: 0px 0px 2px 2px black;
+}
+.notAce {
+  background-color: white;
+  color: black;
+}
+.didAce {
+  background-color: green;
+  color: white;
+}
+.customTotal {
+  border: solid 1px;
+  margin-left: 1rem;
+  border-radius: 50%;
+}
+
+.customDiceRow {
+  display: flex;
+  justify-content: space-between;
+}

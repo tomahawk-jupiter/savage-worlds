@@ -1,0 +1,74 @@
+/**** Table style ****/
+.tableTitle {
+  background-color: #6a0c0c;
+  color: white;
+  text-shadow: 4px 2px 5px black, -2px -2px 15px black;
+  cursor: pointer;
+}
+th {
+  text-align: left;
+}
+th,
+td {
+  padding-right: 0.5em;
+  font-size: 0.7rem;
+  border-bottom: solid 1px rgb(70, 70, 70);
+}
+td {
+  font-size: 0.825rem;
+}
+table {
+  border: solid 1px;
+  margin: 0.5rem 0.5rem 0 0;
+  min-width: 60%;
+}
+.cContainer table {
+  width: 98%;
+}
+
+.equipBtn {
+  background-color: green;
+  color: white;
+  text-align: center;
+  padding: 0.25rem 0.5rem;
+  border: solid 1px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-shadow: 4px 2px 5px black, -2px -2px 15px black;
+  box-shadow: 0px 0px 2px 2px #bb7b7b;
+}
+.equipBtn:active {
+  background-color: yellow;
+}
+.tableEditBtn {
+  margin-left: 1rem;
+}
+
+/**** Input for adding new items to tables ****/
+.newItemTableInput {
+  width: 100%;
+}
+
+.checkboxGroup {
+  display: flex;
+  font-size: 0.6rem;
+}
+
+.tableToggleInputsBtn {
+  background-color: #6a0c0c;
+  background-color: #0a4779;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  width: fit-content;
+  padding: 0.15rem 0.5rem;
+  border-radius: 5px;
+  margin-top: 0.2rem;
+  margin-left: 0.2rem;
+  text-shadow: 4px 2px 5px black, -2px -2px 15px black;
+  box-shadow: 0px 0px 2px 2px black;
+  cursor: pointer;
+}
+.tableToggleInputsBtn:hover {
+  opacity: 0.9;
+}

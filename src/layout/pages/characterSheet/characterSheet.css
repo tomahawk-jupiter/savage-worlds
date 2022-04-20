@@ -1,0 +1,14 @@
+/* Contains Attributes and Skills components */
+.middlePanelRow {
+  display: flex;
+  margin-bottom: 0.25rem;
+}
+
+.infoAndDerivedContainer {
+  display: flex;
+  margin-bottom: 0.25rem;
+}
+
+.bottomPanelRow {
+  display: flex;
+}

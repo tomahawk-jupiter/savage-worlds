@@ -1,0 +1,26 @@
+.equipmentPanel {
+  border: solid 1px;
+  padding: 0.5rem;
+  margin-right: 0.25rem;
+  flex: 1;
+}
+
+.equipmentPanel ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.equipmentPanel li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1px;
+  padding-bottom: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+.equipmentName,
+.equipmentQty {
+  font-size: 0.7rem;
+}
+.equipmentName {
+  margin-right: 1rem;
+}

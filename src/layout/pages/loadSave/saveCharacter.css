@@ -1,0 +1,51 @@
+/* .saveCharacterBtn */
+
+.characterBtnWrapper {
+  display: flex;
+}
+
+.loadCharacterBtn {
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  background-color: #6a0c0c;
+  color: white;
+  padding: 0.25rem 1rem;
+  border-radius: 5px;
+  margin: 0.5rem 1rem 0.25rem;
+  cursor: pointer;
+  text-shadow: 4px 2px 5px black, -2px -2px 15px black;
+  box-shadow: 0px 0px 2px 2px black;
+}
+.loadCharacterBtn:active {
+  background-color: #da7f17;
+}
+
+.saveStorageBtn {
+  background-color: #0064ff;
+}
+.saveStorageBtn:active {
+  background-color: white;
+  color: black;
+}
+.clearStorageBtn {
+  background-color: red;
+}
+.clearStorageBtn,
+.saveStorageBtn {
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: white;
+  padding: 0.25rem 1rem;
+  border-radius: 5px;
+  margin: 0.5rem 1rem 0.25rem;
+  cursor: pointer;
+  width: 175px;
+  text-shadow: 4px 2px 5px black, -2px -2px 15px black;
+  box-shadow: 0px 0px 2px 2px black;
+}
+
+.clearStorageBtn:active {
+  background-color: rgb(236, 214, 14);
+}

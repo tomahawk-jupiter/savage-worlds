@@ -1,0 +1,61 @@
+/**** Navbar ****/
+
+.menu ul {
+  /* background-color: black; */
+  padding: 0;
+  margin: 0;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.navLink {
+  text-decoration: none;
+  color: #000000;
+  width: 25%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  border-right: solid;
+  border-radius: 0 20px 0 0;
+  cursor: pointer;
+}
+
+.rightMostNavLink {
+  border-right: none;
+}
+
+/**** Content Area ****/
+.contentContainer {
+  padding: 0.5em;
+  margin: 0 auto 1rem;
+  max-width: 940px;
+}
+
+.redlineDecoration {
+  background-color: #6a0c0c;
+  width: 100%;
+  height: 20px;
+  position: absolute;
+  z-index: -1;
+  top: 54px;
+}
+.paperImg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -2;
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px 5px;
+}
+
+.mainContainer {
+  position: relative;
+  width: 98%;
+  margin: 1rem auto;
+  min-width: 840px;
+  max-width: 940px;
+}

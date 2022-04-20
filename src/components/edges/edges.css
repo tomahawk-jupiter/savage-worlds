@@ -1,0 +1,40 @@
+.edgesPanel {
+  border: solid 1px;
+  padding: 0.5rem;
+  flex: 1;
+}
+.edgeCard {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.7rem;
+  margin-bottom: 0.5rem;
+}
+.edgeName {
+  font-weight: 700;
+}
+
+.chooseEdgeContainer {
+  height: 120px;
+  overflow: auto;
+  background-color: white;
+  padding: 0.25rem;
+}
+.chooseEdgeCard {
+  font-size: 0.7rem;
+  margin-bottom: 0.5rem;
+}
+.chooseEdgeName {
+  background-color: #6a0c0c;
+  color: white;
+  font-weight: 700;
+  padding: 0.1rem;
+  text-align: center;
+  cursor: pointer;
+}
+.chooseEdgeOk {
+  text-align: center;
+  background-color: chartreuse;
+  width: 30%;
+  margin: 0 auto;
+  border-radius: 10px;
+}

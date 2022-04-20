@@ -1,0 +1,41 @@
+.conditionPanel {
+  border: solid 1px;
+  margin-right: 0.25rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 0 0 12px;
+}
+
+.conditionLabelRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.conditionLabel {
+  font-weight: 700;
+}
+
+.conditionValuesRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5rem;
+  height: 24px;
+}
+
+.conditionValue {
+  cursor: pointer;
+  font-size: 0.8rem;
+  /* padding: 6px; */
+}
+
+.circleValue {
+  /* border: solid 3px #bd0505; */
+  /* border-radius: 50%; */
+  /* padding: 0; */
+  color: #bd0505;
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-align: center;
+}

@@ -1,0 +1,8 @@
+.cContainer {
+  display: flex;
+}
+
+.cContainerLeftCol {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,168 @@
+/*
+**** CONTENTS ****
+*
+* General
+* Reusable
+* Wrappers for layout
+*/
+
+html {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 1400px;
+  background-color: #353535;
+  font-family: "ubuntu", "Helvetica", "monospace";
+  font-family: "monospace";
+}
+
+.componentTitle {
+  font-family: "Helvetica";
+}
+
+h1 {
+  margin: 0;
+  text-shadow: 1px 1px 2px pink;
+}
+
+input:focus {
+  outline: none;
+}
+textarea {
+  resize: none;
+}
+textarea:focus {
+  outline: none;
+}
+
+/*************************/
+/**** REUSABLE STYLES ****/
+/*************************/
+
+.traitCard {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2px;
+  justify-content: space-between;
+  width: 200px;
+}
+
+.attributeName {
+  font-size: 0.8rem;
+  width: 100px;
+  font-weight: 700;
+  color: #202020;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  font-size: 1.5rem;
+  font-weight: 700;
+  opacity: 0.8;
+  cursor: pointer;
+  user-select: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: white;
+  text-shadow: 4px 2px 5px black, -2px -2px 15px black;
+  box-shadow: 0px 0px 2px 2px black;
+}
+.button:active {
+  background-color: white;
+}
+.plus {
+  background-color: green;
+}
+.minus {
+  background-color: red;
+  padding-bottom: 0.2rem;
+}
+
+.saveBtn {
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  background-color: #6a0c0c;
+  color: white;
+  padding: 0.25rem 0;
+  border-radius: 10px;
+  margin-top: 0.25rem;
+  cursor: pointer;
+  user-select: none;
+  text-shadow: 4px 2px 5px black, -2px -2px 15px black;
+  box-shadow: 0px 0px 2px 2px black;
+}
+
+.hideBtn {
+  visibility: hidden;
+}
+
+.traitDice {
+  background-color: black;
+  color: white;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  user-select: none;
+}
+.diceResult {
+  background-color: green;
+}
+.critFail {
+  background-color: rgb(196, 17, 17);
+}
+
+.componentTitle {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  margin-right: 1rem;
+}
+
+.available {
+  font-size: 0.7rem;
+  color: green;
+  font-weight: 700;
+}
+
+.editBtn {
+  font-size: 0.75rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  color: #6a0c0c;
+  border-bottom: 1px solid;
+}
+
+/*********************************/
+/**** wrapper divs for layout ****/
+/*********************************/
+.armourAndWoundsWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 324px;
+}
+
+.skillAndDiceRollWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.equipmentAndNotesWrapper {
+  display: flex;
+  /* flex-direction: column; */
+  width: 100%;
+}

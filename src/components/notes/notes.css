@@ -1,0 +1,22 @@
+.notesPanel {
+  border: solid 1px;
+  padding: 0.5rem;
+  flex: 1;
+  border-radius: 0 0 12px 0;
+}
+
+.newNoteInputGroup {
+  display: flex;
+  flex-direction: column;
+}
+.newNoteBtn {
+  background-color: #6a0c0c;
+  color: white;
+}
+
+.noteEntry {
+  white-space: pre-wrap;
+  font-size: 0.7rem;
+  border-bottom: 1px solid #000;
+  padding: 0.2rem 0;
+}
