@@ -150,30 +150,4 @@ const rangedWeapons = [
   },
 ];
 
-const skillList = {
-  boating: { name: "Boating", attribute: "Agility", score: 4 },
-  climbing: { name: "Climbing", attribute: "Strength", score: 4 },
-  driving: { name: "Driving", attribute: "Agility", score: 4 },
-  fighting: { name: "Fighting", attribute: "Agility", score: 4 },
-  gambling: { name: "Gambling", attribute: "Smarts", score: 4 },
-  healing: { name: "Healing", attribute: "Smarts", score: 4 },
-  intimidation: { name: "Intimidation", attribute: "Spirit", score: 4 },
-  investigation: { name: "Investigation", attribute: "Smarts", score: 4 },
-  knowledge: { name: "Knowledge", attribute: "Smarts", score: 4 },
-  lockpicking: { name: "Lockpicking", attribute: "Agility", score: 4 },
-  notice: { name: "Notice", attribute: "Smarts", score: 4 },
-  persuasion: { name: "Persuasion", attribute: "Spirit", score: 4 },
-  piloting: { name: "Piloting", attribute: "Agility", score: 4 },
-  repair: { name: "Repair", attribute: "Smarts", score: 4 },
-  riding: { name: "Riding", attribute: "Agility", score: 4 },
-  shooting: { name: "Shooting", attribute: "Agility", score: 4 },
-  stealth: { name: "Stealth", attribute: "Agility", score: 4 },
-  streetwise: { name: "Streetwise", attribute: "Smarts", score: 4 },
-  survival: { name: "Survival", attribute: "Smarts", score: 4 },
-  swimming: { name: "Swimming", attribute: "Agility", score: 4 },
-  taunt: { name: "Taunt", attribute: "Smarts", score: 4 },
-  throwing: { name: "Throwing", attribute: "Agility", score: 4 },
-  tracking: { name: "Tracking", attribute: "Smarts", score: 4 },
-};
-
-export { adventurerGear, meleeWeapons, armourStock, rangedWeapons, skillList };
+export { adventurerGear, meleeWeapons, armourStock, rangedWeapons };

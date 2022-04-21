@@ -6,10 +6,10 @@ import MeleeTable from "../../../components/tables/meleeTable/MeleeTable";
 import RangedTable from "../../../components/tables/rangedTable/RangedTable";
 
 // Hardcoded item info //
-import { armourStock } from "../../../gameData/stockData";
-import { adventurerGear } from "../../../gameData/stockData";
-import { meleeWeapons } from "../../../gameData/stockData";
-import { rangedWeapons } from "../../../gameData/stockData";
+import { armourStock } from "../../../gameData/shopStock";
+import { adventurerGear } from "../../../gameData/shopStock";
+import { meleeWeapons } from "../../../gameData/shopStock";
+import { rangedWeapons } from "../../../gameData/shopStock";
 import ItemTable from "../../../components/tables/equipmentTable/EquipmentTable";
 import { connect } from "react-redux";
 

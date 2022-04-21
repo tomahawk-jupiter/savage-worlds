@@ -8,7 +8,6 @@ module.exports = {
     path: path.join(__dirname, "/dist"),
     filename: "index_bundle.js",
   },
-  devtool: "inline-source-map",
   module: {
     rules: [
       {

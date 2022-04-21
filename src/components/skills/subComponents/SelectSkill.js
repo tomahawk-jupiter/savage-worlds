@@ -1,15 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { skillList } from "../../../gameData/stockData";
-
-/** SelectSkill component ***********************
- *
- * This is similar to the other trait cards
- * but its for selecting new skills to add.
- * It toggles a select element and loops through
- * a skill list to render the options.
- *
- ************************************************ */
+import skillList from "../../../gameData/skillList";
 
 const Option = ({ skillObj, skill }) => {
   return (
@@ -25,6 +16,11 @@ const SelectSkill = ({ showOptions, toggleOptions, addSkill, knownSkills }) => {
   const [selectedSkill, setSelectedSkill] = useState("");
   const [selectedObj, setSelectedObj] = useState("");
   const [selectOn, setSelectOn] = useState(false);
+  const [isKnowledge, setIsKnowledge] = useState(false);
+  const [isCustom, setIsCustom] = useState(false);
+  const [customSubject, setCustomSubject] = useState("");
+  const [customAttribute, setCustomAttribute] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
 
   const handleToggle = () => {
     toggleOptions();
@@ -33,18 +29,72 @@ const SelectSkill = ({ showOptions, toggleOptions, addSkill, knownSkills }) => {
 
   const handleSelect = (e) => {
     const skill = e.target.value;
+    console.log({ skill });
+    setIsCustom(false);
+    setIsKnowledge(false);
+    setErrorMsg("");
+    if (skill === "knowledge") {
+      setIsKnowledge(true);
+    }
+    if (skill === "custom") {
+      setIsCustom(true);
+    }
     const skillObj = skillList[skill];
     setSelectedSkill(skill);
     setSelectedObj(skillObj);
   };
 
+  const handleCustomSubject = (e) => {
+    if (e.target.name === "subject") {
+      setCustomSubject(e.target.value);
+    }
+    if (e.target.name === "attribute") {
+      setCustomAttribute(e.target.value);
+    }
+  };
+
   const confirmChoice = () => {
-    // Add skill to state //
+    const clear = () => {
+      setSelectedSkill("");
+      setSelectedObj("");
+      setCustomSubject("");
+      setCustomAttribute("");
+      setIsKnowledge(false);
+      setIsCustom(false);
+      toggleOptions();
+      setSelectOn(false);
+      setErrorMsg("");
+    };
+    if (selectedSkill === "knowledge") {
+      // Add a custom field for knowledge skill //
+      if (!customSubject) {
+        setErrorMsg("Specify a subject for knowledge skill!");
+        return;
+      }
+      const skillObj = { name: customSubject, attribute: "Smarts", score: 4 };
+      const skillName = customSubject;
+      addSkill(skillName, skillObj);
+      clear();
+      return;
+    }
+    if (selectedSkill === "custom") {
+      if (!customSubject || !customAttribute) {
+        setErrorMsg("Fill in both fields!");
+        return;
+      }
+      const skillObj = {
+        name: customSubject,
+        attribute: customAttribute,
+        score: 4,
+      };
+      const skillName = customSubject;
+      addSkill(skillName, skillObj);
+      clear();
+      return;
+    }
     addSkill(selectedSkill, selectedObj);
-    setSelectedSkill("");
-    setSelectedObj("");
-    toggleOptions();
-    setSelectOn(false);
+    clear();
+    return;
   };
 
   return (
@@ -53,26 +103,59 @@ const SelectSkill = ({ showOptions, toggleOptions, addSkill, knownSkills }) => {
       <div className="traitDice center hideBtn">0</div>
       {!showOptions && <div className="attributeName">Add Skill</div>}
       {showOptions && (
-        <select onChange={handleSelect} name="skills" id="skill-select">
-          <option value="">--New Skill--</option>
-          {(() => {
-            const arr = [];
-            for (const skill in skillList) {
-              // if skill is not already stored in state //
-              if (!knownSkills.hasOwnProperty(skill)) {
-                arr.push(
-                  <Option
-                    skillObj={skillList[skill]}
-                    skill={skill}
-                    key={skill}
-                    selectedSkill={selectedSkill}
-                  />
-                );
+        <div className="skillSelectAndCustom">
+          <select onChange={handleSelect} name="skills" id="skill-select">
+            <option value="">--New Skill--</option>
+            {(() => {
+              const arr = [];
+              for (const skill in skillList) {
+                // if skill is not already stored in state //
+                if (!knownSkills.hasOwnProperty(skill)) {
+                  arr.push(
+                    <Option
+                      skillObj={skillList[skill]}
+                      skill={skill}
+                      key={skill}
+                      selectedSkill={selectedSkill}
+                    />
+                  );
+                }
               }
-            }
-            return arr;
-          })()}
-        </select>
+              return arr;
+            })()}
+          </select>
+          {isKnowledge && (
+            <input
+              onChange={handleCustomSubject}
+              name="subject"
+              className="customInput"
+              type="text"
+              placeholder="Subject, eg. History"
+              value={customSubject}
+            />
+          )}
+          {isCustom && (
+            <>
+              <input
+                onChange={handleCustomSubject}
+                name="subject"
+                className="customInput"
+                type="text"
+                placeholder="Name of skill"
+                value={customSubject}
+              />
+              <input
+                onChange={handleCustomSubject}
+                name="attribute"
+                className="customInput"
+                type="text"
+                placeholder="Attribute, eg. Agility"
+                value={customAttribute}
+              />
+            </>
+          )}
+          <span className="errorMsg">{errorMsg}</span>
+        </div>
       )}
       {!selectedSkill && (
         <div

@@ -22,3 +22,17 @@
 #skill-select {
   max-width: 130px;
 }
+
+.skillSelectAndCustom {
+  display: flex;
+  flex-direction: column;
+}
+.customInput {
+  max-width: 130px;
+}
+.errorMsg {
+  font-size: 0.7rem;
+  color: red;
+  font-style: italic;
+  font-weight: 700;
+}
