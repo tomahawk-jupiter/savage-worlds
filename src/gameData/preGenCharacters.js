@@ -5,6 +5,12 @@ const hudson = {
     xp: 20,
     rank: "Seasoned",
   },
+  derivedStatsBoost: {
+    charisma: 0,
+    pace: 6,
+    parry: 0,
+    toughness: 0,
+  },
   background: {
     appearance: {
       age: "none",

@@ -5,10 +5,7 @@ const notesReducer = (state = initialState, action) => {
     case "ADD_NOTE":
       return [...state, action.note];
     case "REMOVE_NOTE":
-      return [
-        ...state.slice(0, action.index),
-        ...state.slice(action.index + 1),
-      ];
+      return state.filter((i, index) => index != action.index);
     case "LOAD_NOTES":
       return action.notes;
     default:

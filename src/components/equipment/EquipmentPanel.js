@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import "./equipment.css";
 import { connect } from "react-redux";
 
-const EquipmentPanel = ({ equipmentList, removeEquipment, addEquipment }) => {
+const EquipmentPanel = ({
+  equipmentList,
+  removeOne,
+  removeLast,
+  addEquipment,
+}) => {
   const [showInput, setShowInput] = useState(false);
   const [text, setText] = useState("");
 
@@ -22,10 +27,17 @@ const EquipmentPanel = ({ equipmentList, removeEquipment, addEquipment }) => {
       weight: 0,
       quantity: 1,
     };
-
     addEquipment(item);
     setText("");
     setShowInput(false);
+  };
+
+  const removeEquipment = (item) => {
+    if (item.quantity > 1) {
+      removeOne(item.item);
+      return;
+    }
+    removeLast(item.item);
   };
 
   return (
@@ -56,7 +68,7 @@ const EquipmentPanel = ({ equipmentList, removeEquipment, addEquipment }) => {
       <ul className="equipmentList">
         {equipmentList.map((item, index) => {
           return (
-            <li key={index} onClick={() => removeEquipment(item.item)}>
+            <li key={index} onClick={() => removeEquipment(item)}>
               <span className="equipmentName">{item.item}</span>
               <span className="equipmentQty">{"Qty " + item.quantity}</span>
             </li>
@@ -76,7 +88,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    removeEquipment: (item) => dispatch({ type: "REMOVE_EQUIPMENT", item }),
+    removeOne: (item) => dispatch({ type: "REMOVE_EQUIPMENT_ONE", item }),
+    removeLast: (item) => dispatch({ type: "REMOVE_EQUIPMENT_LAST", item }),
     addEquipment: (item) => dispatch({ type: "ADD_EQUIPMENT", item }),
   };
 };

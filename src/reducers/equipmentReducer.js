@@ -13,18 +13,19 @@ const equipmentReducer = (state = initialState, action) => {
         return item;
       });
       return isNew ? [...state, action.item] : equipmentList;
-    case "REMOVE_EQUIPMENT":
+    case "REMOVE_EQUIPMENT_ONE":
       const filteredList = state.map((i) => {
-        if (i && i.item === action.item) {
-          i.quantity = i.quantity - 1;
-          if (i.quantity < 1) {
-            return;
-          }
+        if (i.item === action.item) {
+          i.quantity -= 1;
           return i;
         }
         return i;
       });
       return filteredList[0] === undefined ? [] : filteredList;
+    case "REMOVE_EQUIPMENT_LAST":
+      return state.filter((i) => {
+        return i.item !== action.item;
+      });
     case "LOAD_EQUIPMENT":
       return action.equipment;
     default:
