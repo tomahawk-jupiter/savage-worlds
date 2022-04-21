@@ -2,17 +2,22 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import "./characterInfo.css";
 
-const CharacterInfo = ({ name, profession, updateName, updateProfession }) => {
+const CharacterInfo = ({
+  name,
+  profession,
+  updateName,
+  updateProfession,
+  rank,
+}) => {
   const [editName, setEditName] = useState(false);
   const [editProfession, setEditProfession] = useState(false);
-  // const [characterName, setCharacterName] = useState("Pvt Willian Hudson");
-  // const [characterProfession, setCharacterProfession] = useState("Colonial Marine");
 
   const handleEditField = (e) => {
-    if (e.target.id === "name") {
+    const id = e.target.id;
+    if (id === "name" || id === "nameLabel") {
       setEditName(true);
     }
-    if (e.target.id === "profession") {
+    if (id === "profession" || id === "professionLabel") {
       setEditProfession(true);
     }
   };
@@ -53,14 +58,22 @@ const CharacterInfo = ({ name, profession, updateName, updateProfession }) => {
               type="text"
               value={name}
               autoFocus
+              onFocus={(e) => e.target.select()}
             />
             <button name="name" onClick={confirmChange}>
               Ok
             </button>
           </div>
         )}
-        <span className="characterInfoKey">Name</span>
+        <span
+          id="nameLabel"
+          onClick={handleEditField}
+          className="characterInfoKey"
+        >
+          Name
+        </span>
       </div>
+
       <div className="characterInfoCard">
         {!editProfession && (
           <span
@@ -80,11 +93,23 @@ const CharacterInfo = ({ name, profession, updateName, updateProfession }) => {
               type="text"
               value={profession}
               autoFocus
+              onFocus={(e) => e.target.select()}
             />
             <button onClick={confirmChange}>Ok</button>
           </div>
         )}
-        <span className="characterInfoKey">Profession</span>
+        <span
+          id="professionLabel"
+          onClick={handleEditField}
+          className="characterInfoKey"
+        >
+          Profession
+        </span>
+      </div>
+
+      <div className="characterInfoCard">
+        <span className="characterInfoValue">{rank}</span>
+        <span className="characterInfoKey">Rank</span>
       </div>
     </div>
   );
@@ -94,6 +119,7 @@ const mapStateToProps = (state) => {
   return {
     name: state.characterInfo.name,
     profession: state.characterInfo.profession,
+    rank: state.characterInfo.rank,
   };
 };
 const mapDispatchToProps = (dispatch) => {

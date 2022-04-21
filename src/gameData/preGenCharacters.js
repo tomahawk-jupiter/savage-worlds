@@ -2,6 +2,8 @@ const hudson = {
   characterInfo: {
     name: "William Hudson",
     profession: "Colonial Marine",
+    xp: 20,
+    rank: "Seasoned",
   },
   background: {
     appearance: {

@@ -1,0 +1,13 @@
+.advanceRules {
+  font-size: 0.7rem;
+  margin-top: 0.5rem;
+}
+
+.advanceRules ul {
+  margin: 0.5rem 0 0;
+  padding-left: 2rem;
+}
+
+.advanceRules li {
+  margin-bottom: 0.25rem;
+}

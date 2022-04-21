@@ -2,6 +2,14 @@ const initialState = {
   characterInfo: {
     name: "Add name",
     profession: "Add profession",
+    xp: 0,
+    rank: "Novice",
+  },
+  derivedStatsBoost: {
+    charisma: 0,
+    pace: 6,
+    parry: 0,
+    toughness: 0,
   },
   background: {
     appearance: {

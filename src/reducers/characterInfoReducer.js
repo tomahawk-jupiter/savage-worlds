@@ -12,6 +12,18 @@ const characterInfoReducer = (state = initialState, action) => {
         ...state,
         profession: action.profession,
       };
+    case "ADD_XP":
+      return {
+        ...state,
+        xp: state.xp + 1,
+        rank: action.rank,
+      };
+    case "MINUS_XP":
+      return {
+        ...state,
+        xp: state.xp > 0 ? state.xp - 1 : 0,
+        rank: action.rank,
+      };
     case "LOAD_INFO":
       return action.info;
     default:

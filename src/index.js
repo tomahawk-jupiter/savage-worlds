@@ -18,6 +18,7 @@ import notesReducer from "./reducers/notesReducer";
 import characterInfoReducer from "./reducers/characterInfoReducer";
 import backgroundReducer from "./reducers/backgroundReducer";
 import App from "./layout/App";
+import { derivedReducer } from "./reducers/derivedReducer";
 
 const rootReducer = combineReducers({
   attrState: attributeReducer,
@@ -32,6 +33,7 @@ const rootReducer = combineReducers({
   notes: notesReducer,
   characterInfo: characterInfoReducer,
   background: backgroundReducer,
+  derivedStatsBoost: derivedReducer,
 });
 
 const store = createStore(rootReducer, initialState);

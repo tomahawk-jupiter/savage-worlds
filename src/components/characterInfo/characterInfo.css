@@ -22,7 +22,7 @@
 }
 
 .characterInfoCard input {
-  max-width: 150px;
+  width: 100px;
 }
 .characterInfoCard input:focus {
   outline: none;

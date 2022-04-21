@@ -4,6 +4,7 @@
   margin-right: 0.25rem;
   margin-bottom: 0.25rem;
   width: 450px;
+  flex: 1;
 }
 
 .titleRow {
