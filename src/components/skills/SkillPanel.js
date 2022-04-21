@@ -61,16 +61,19 @@ const SkillPanel = ({ skills, availablePoints, saved, saveSkills }) => {
       </div>
       <hr />
       <div className="italicNote">
-        Add skills. Click to roll, click again to reset.
-      </div>
-      <div className="italicNote">
-        <strong>Rules: </strong>skills should not be increased higher than the
-        associated attribute.
+        Add skills. Click to roll, click again to reset. Wild dice and aces
+        included. ! = snake eyes, Critical Failure.
       </div>
       {!saved && !!availablePoints && (
-        <div onClick={toggleEdit} className="saveBtn center">
-          Apply
-        </div>
+        <>
+          <div className="italicNote">
+            <strong>Rules: </strong>skills should not be increased higher than
+            the associated attribute.
+          </div>
+          <div onClick={toggleEdit} className="saveBtn center">
+            Apply
+          </div>
+        </>
       )}
     </div>
   );

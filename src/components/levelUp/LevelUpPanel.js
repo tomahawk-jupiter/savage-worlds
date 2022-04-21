@@ -6,12 +6,15 @@ const LevelUpPanel = ({
   addAttributePoint,
   addSkillPoint,
   addEdgePoint,
+  addHindrancePoint,
   removeAttributePoint,
   removeSkillPoint,
   removeEdgePoint,
+  removeHindrancePoint,
   availableAttributePoints,
   availableSkillPoints,
   availableEdges,
+  availableHindrances,
   addXp,
   minusXp,
   xp,
@@ -28,6 +31,9 @@ const LevelUpPanel = ({
   const handleEdge = () => {
     addEdgePoint();
   };
+  const handleHindrance = () => {
+    addHindrancePoint();
+  };
 
   const handleRemoveAttribute = () => {
     if (availableAttributePoints > 0) {
@@ -42,6 +48,11 @@ const LevelUpPanel = ({
   const handleRemoveEdge = () => {
     if (availableEdges > 0) {
       removeEdgePoint();
+    }
+  };
+  const handleRemoveHindrance = () => {
+    if (availableHindrances > 0) {
+      removeHindrancePoint();
     }
   };
 
@@ -176,6 +187,7 @@ const LevelUpPanel = ({
             {availableSkillPoints}
           </span>
         </div>
+
         <div className="pointBuyRow">
           <span onClick={handleEdge} className="pointBuyBtn">
             Edges Points
@@ -184,24 +196,16 @@ const LevelUpPanel = ({
             {availableEdges}
           </span>
         </div>
-      </div>
 
-      {/* {showRules && (
-        <div>
-          <hr />
-          <div className="italicNote">
-            <strong>HINDRANCES: </strong>
-            Gain additional points by taking Hindrances. A Major one gives 2
-            points, a Minor 1 point.
-          </div>
-          <div className="italicNote">
-            <strong>2 points: </strong>Gain an attribute point or one edge.
-          </div>
-          <div className="italicNote">
-            <strong>1 point: </strong>Gain a skill point.
-          </div>
+        <div className="pointBuyRow">
+          <span onClick={handleHindrance} className="pointBuyBtn">
+            Required Hindrances
+          </span>
+          <span onClick={handleRemoveHindrance} className="pointBuyValue">
+            {availableHindrances}
+          </span>
         </div>
-      )} */}
+      </div>
     </div>
   );
 };
@@ -211,6 +215,7 @@ const mapStateToProps = (state) => {
     availableAttributePoints: state.attrState.availablePoints,
     availableSkillPoints: state.skillState.availablePoints,
     availableEdges: state.edges.available,
+    availableHindrances: state.hindrances.available,
     xp: state.characterInfo.xp,
     rank: state.characterInfo.rank,
   };
@@ -219,6 +224,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     addEdgePoint: () => dispatch({ type: "ADD_EDGE_POINT" }),
     removeEdgePoint: () => dispatch({ type: "REMOVE_EDGE_POINT" }),
+    addHindrancePoint: () => dispatch({ type: "ADD_HINDRANCE_POINT" }),
+    removeHindrancePoint: () => dispatch({ type: "REMOVE_HINDRANCE_POINT" }),
     addAttributePoint: () => dispatch({ type: "ADD_ATTRIBUTE_POINT" }),
     removeAttributePoint: () => dispatch({ type: "REMOVE_ATTRIBUTE_POINT" }),
     addSkillPoint: () => dispatch({ type: "ADD_SKILL_POINT" }),

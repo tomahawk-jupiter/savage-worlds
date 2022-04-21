@@ -59,7 +59,10 @@ const initialState = {
     array: [],
     available: 1,
   },
-  hindrances: [],
+  hindrances: {
+    array: [],
+    available: 0,
+  },
   condition: {
     incapacitated: false,
     wounds: "0",

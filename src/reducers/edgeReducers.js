@@ -27,7 +27,20 @@ const edgeReducer = (state = initialState, action) => {
 const hindranceReducer = (state = initialState, action) => {
   switch (action.type) {
     case "ADD_HINDRANCE":
-      return [...state, action.hindrance];
+      return {
+        available: state.available - 1,
+        array: [...state.array, action.hindrance],
+      };
+    case "ADD_HINDRANCE_POINT":
+      return {
+        ...state,
+        available: state.available + 1,
+      };
+    case "REMOVE_HINDRANCE_POINT":
+      return {
+        ...state,
+        available: state.available - 1,
+      };
     case "LOAD_HINDRANCES":
       return action.hindrances;
     default:

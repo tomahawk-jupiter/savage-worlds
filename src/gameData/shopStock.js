@@ -82,6 +82,14 @@ const armourStock = [
     notes: "50% vs head, medieval",
   },
   {
+    item: "Kevlar Vest",
+    armour: 2,
+    covers: "torso",
+    weight: 8,
+    price: 250,
+    notes: "modern, 4 armour vs bullets",
+  },
+  {
     item: "Battle Suit",
     armour: 6,
     covers: "head, torso, arms, legs",

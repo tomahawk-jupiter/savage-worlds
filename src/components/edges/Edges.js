@@ -5,7 +5,12 @@ import hindranceList from "../../gameData/hindranceList";
 import EdgeList from "./edgeList/EdgeList";
 import { connect } from "react-redux";
 
-const Edges = ({ characterEdges, characterHindrances, availableEdges }) => {
+const Edges = ({
+  characterEdges,
+  characterHindrances,
+  availableEdges,
+  availableHindrances,
+}) => {
   const [showEdgeList, setShowEdgeList] = useState(false);
   const [showHindranceList, setShowHindranceList] = useState(false);
 
@@ -25,6 +30,9 @@ const Edges = ({ characterEdges, characterHindrances, availableEdges }) => {
           <sup onClick={handleChooseHindrance} className="editBtn">
             Add
           </sup>
+        </span>
+        <span className="available">
+          {availableHindrances > 0 ? `${availableHindrances} required` : ""}
         </span>
         {characterHindrances.map((hindrance, index) => {
           return (
@@ -86,9 +94,6 @@ const Edges = ({ characterEdges, characterHindrances, availableEdges }) => {
           </div>
         )}
       </div>
-      {/* <span className="italicNote">
-        Remember to add or subtract any modifiers from this list.
-      </span> */}
       <hr />
       <span className="italicNote">
         Remember, apply any modifiers from this panel.
@@ -101,7 +106,8 @@ const mapStateToProps = (state) => {
   return {
     characterEdges: state.edges.array,
     availableEdges: state.edges.available,
-    characterHindrances: state.hindrances,
+    characterHindrances: state.hindrances.array,
+    availableHindrances: state.hindrances.available,
   };
 };
 
