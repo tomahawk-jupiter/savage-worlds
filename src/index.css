@@ -25,6 +25,10 @@ body {
   font-family: "monospace";
 }
 
+#app {
+  min-width: 900px;
+}
+
 .componentTitle {
   font-family: "Helvetica";
 }

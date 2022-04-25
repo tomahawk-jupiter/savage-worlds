@@ -1,14 +1,14 @@
 {
   "name": "savage-worlds-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "Interactive character sheet for the TTRPG savage worlds.",
   "main": "index.js",
   "private": true,
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack"
   },
-  "author": "",
+  "author": "Jupiter",
   "license": "ISC",
   "dependencies": {
     "react": "^17.0.2",

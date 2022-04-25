@@ -1,9 +1,11 @@
 # Savage Worlds Interactive Character sheet
 
-Originally I was using React Router but I removed it.
+An interactive character sheet for the TTRPG savage worlds. You can roll dice, improve character stats, fill in name, background info, etc.
 
-## Bugs
+It uses local storage for saving / loading character sheets. Can save multiple.
 
-### Equipment panel
+I use React and Redux for the state management.
 
-Click to remove list item either causes an error or removes too many items.
+Its not currently responsive, the min width is 900px.
+
+I manually setup webpack instead of using create react app so it makes a good reference for a simple webpack React setup.
