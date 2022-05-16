@@ -2,6 +2,8 @@
 
 An interactive character sheet for the TTRPG savage worlds. 
 
+This is more of a first attempt / prototype. I'd like it to be fully responsive for different screen sizes eventually.
+
 [Live Page](https://tomahawk-jupiter.github.io/savage-worlds/)
 
 ## What It Does
@@ -31,7 +33,7 @@ I use React and Redux for the state management. There are notes for how to use R
 
 Its not currently responsive, the min width is 900px.
 
-Its quite a complex layout and I'm not sure how to approach the layout for smaller screens. I primarily designed it for a tablet sized screen, but mainly I was just trying to get all the components on a single page. 
+Its quite a complex layout and I'm not sure how to approach the layout for smaller screens. I was mainly just trying to get all the components on a single page. 
 
 I might try to redesign the layout in the future, perhaps with tabs that can be maximized / minimized or display components in different tabs, a bit like it already is but with more tabs. Its quite alot of info to fit on a phone sized screen.
 
